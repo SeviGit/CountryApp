@@ -18,8 +18,12 @@ const routes: Routes = [
   component: ContacPageComponent
 },
 {
+  path:'countries',
+  loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule )
+},
+{
   path:'**',
-  redirectTo: 'home'
+  redirectTo: 'countries'
 }
 
 ];
